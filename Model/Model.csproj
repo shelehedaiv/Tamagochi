@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89CBBDF9-B952-4812-9984-AAA0A35FE53C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConstructionModules\Saving\Memento.cs" />
+    <Compile Include="Inventory\IGive.cs" />
+    <Compile Include="Inventory\IShowContent.cs" />
+    <Compile Include="ModelStarters\AdminModelStarter.cs" />
+    <Compile Include="ModelStarters\RealModelStarter.cs" />
+    <Compile Include="PetModule\Attribute\Need.cs" />
+    <Compile Include="PetModule\Attribute\LifeTimer.cs" />
+    <Compile Include="Inventory\ICollect.cs" />
+    <Compile Include="Inventory\IInventory.cs" />
+    <Compile Include="PetModule\Attribute\NeedType.cs" />
+    <Compile Include="PetModule\IPet.cs" />
+    <Compile Include="ModelStarters\BaseModelStarter.cs" />
+    <Compile Include="ConstructionModules\Ninjector.cs" />
+    <Compile Include="ConstructionModules\Observer\IListener.cs" />
+    <Compile Include="ConstructionModules\Observer\ISubject.cs" />
+    <Compile Include="PetModule\Pet.cs" />
+    <Compile Include="Player\GodPlayer.cs" />
+    <Compile Include="Player\ICustomer.cs" />
+    <Compile Include="Purchase\Money\InfiniteWallet.cs" />
+    <Compile Include="Purchase\Money\IPay.cs" />
+    <Compile Include="Purchase\Money\IWallet.cs" />
+    <Compile Include="Player\Player.cs" />
+    <Compile Include="Purchase\Shop.cs" />
+    <Compile Include="Inventory\InfiniteInventory.cs" />
+    <Compile Include="Inventory\SimpleInventory.cs" />
+    <Compile Include="Purchase\Storage.cs" />
+    <Compile Include="Purchase\Money\Wallet.cs" />
+    <Compile Include="ConstructionModules\DataSerializer.cs" />
+    <Compile Include="Inventory\Stuff\Toy.cs" />
+    <Compile Include="Inventory\Inventory.cs" />
+    <Compile Include="Inventory\Stuff\Soap.cs" />
+    <Compile Include="Inventory\Stuff\Food.cs" />
+    <Compile Include="Inventory\Stuff\Item.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ConstructionModules\Saving\SaveSlots\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

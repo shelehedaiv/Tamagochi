@@ -3,3 +3,12 @@
 ################################################################################
 
 /.vs/Tamagochi/v15
+/packages
+/View.Test
+/Model.Test
+/ViewModel/bin/Debug
+/ViewModel/obj
+/View/bin/Debug
+/View/obj
+/Model/bin/Debug
+/Model/obj
